@@ -1,5 +1,3 @@
-### The DATALOADer gENerator [![CircleCI](https://circleci.com/gh/Vektah/dataloaden.svg?style=svg)](https://circleci.com/gh/vektah/dataloaden) [![Go Report Card](https://goreportcard.com/badge/github.com/vektah/dataloaden)](https://goreportcard.com/report/github.com/vektah/dataloaden) [![codecov](https://codecov.io/gh/vektah/dataloaden/branch/master/graph/badge.svg)](https://codecov.io/gh/vektah/dataloaden)
-
 Requires golang 1.11+ for modules support.
 
 This is a tool for generating type safe data loaders for go, inspired by https://github.com/facebook/dataloader.
@@ -12,7 +10,7 @@ get used.
 
 From inside the package you want to have the dataloader in:
 ```bash
-go run github.com/vektah/dataloaden UserLoader string *github.com/dataloaden/example.User
+go run github.com/savel999/dataloaden UserLoader string *github.com/dataloaden/example.User
 ```
 
 This will generate a dataloader called `UserLoader` that looks up `*github.com/dataloaden/example.User`'s objects 
@@ -53,7 +51,7 @@ You may want to generate a dataloader that returns slices instead of single valu
 simple go type expression: 
 
 ```bash
-go run github.com/vektah/dataloaden UserSliceLoader string []*github.com/dataloaden/example.User
+go run github.com/savel999/dataloaden UserSliceLoader string []*github.com/dataloaden/example.User
 ```
 
 Now each key is expected to return a slice of values and the `fetch` function has the return type `[][]*User`.
@@ -66,12 +64,12 @@ Create a tools.go that looks like this:
 
 package main
 
-import _ "github.com/vektah/dataloaden"
+import _ "github.com/savel999/dataloaden"
 ```
 
 This will allow go modules to see the dependency.
 
-You can invoke it from anywhere within your module now using `go run github.com/vektah/dataloaden` and 
+You can invoke it from anywhere within your module now using `go run github.com/savel999/dataloaden` and 
 always get the pinned version.
 
 #### Wait, how do I use context with this?

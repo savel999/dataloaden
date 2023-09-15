@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/savel999/dataloaden/example"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/vektah/dataloaden/example"
 )
 
 func TestUserLoader(t *testing.T) {
